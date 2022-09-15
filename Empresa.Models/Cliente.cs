@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Empresa.Models
 {
-    public class Cliente
+    public sealed class Cliente : EntidadeBase //sealed para indicar que esta classe não deverá ser usada como herança por outra classe. 
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Telefone { get; set; }
-
+        
 
     }
 }
