@@ -84,7 +84,7 @@ namespace Empresa.Db
                 cliente.Id = Convert.ToInt32(reader["Id"]);
                 cliente.Nome = reader["Nome"].ToString();
                 cliente.Email = reader["Email"].ToString();
-                cliente.Telefone = reader["elefone"].ToString();
+                cliente.Telefone = reader["Telefone"].ToString();
 
                 //jogo na lista
                 lista.Add(cliente);
