@@ -101,6 +101,7 @@ namespace Empresa.UI.Windows
             this.alterarButton.TabIndex = 1;
             this.alterarButton.Text = "Alterar";
             this.alterarButton.UseVisualStyleBackColor = true;
+            this.alterarButton.Click += new System.EventHandler(this.alterarButton_Click);
             // 
             // excluirButton
             // 
@@ -110,6 +111,7 @@ namespace Empresa.UI.Windows
             this.excluirButton.TabIndex = 2;
             this.excluirButton.Text = "Excluir";
             this.excluirButton.UseVisualStyleBackColor = true;
+            this.excluirButton.Click += new System.EventHandler(this.excluirButton_Click);
             // 
             // confirmarInclusaoButton
             // 
@@ -129,6 +131,7 @@ namespace Empresa.UI.Windows
             this.sairButton.TabIndex = 4;
             this.sairButton.Text = "Sair";
             this.sairButton.UseVisualStyleBackColor = true;
+            this.sairButton.Click += new System.EventHandler(this.sairButton_Click);
             // 
             // confirmarAlterarButton
             // 
@@ -138,6 +141,7 @@ namespace Empresa.UI.Windows
             this.confirmarAlterarButton.TabIndex = 5;
             this.confirmarAlterarButton.Text = "Alterar";
             this.confirmarAlterarButton.UseVisualStyleBackColor = true;
+            this.confirmarAlterarButton.Click += new System.EventHandler(this.confirmarAlterarButton_Click);
             // 
             // confirmarExcluirButton
             // 
@@ -147,6 +151,7 @@ namespace Empresa.UI.Windows
             this.confirmarExcluirButton.TabIndex = 6;
             this.confirmarExcluirButton.Text = "Confirmar Exclusão";
             this.confirmarExcluirButton.UseVisualStyleBackColor = true;
+            this.confirmarExcluirButton.Click += new System.EventHandler(this.confirmarExcluirButton_Click);
             // 
             // conteudoPanel
             // 

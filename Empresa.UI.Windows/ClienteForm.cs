@@ -51,7 +51,11 @@ namespace Empresa.UI.Windows
 
         private void novoButton_Click(object sender, EventArgs e)
         {
+            LimparCampos();
             ExibirFicha();
+            confirmarAlterarButton.Visible = false;
+            confirmarExcluirButton.Visible = false;
+            confirmarInclusaoButton.Visible = true;
         }
 
         private void ExibirFicha()
@@ -64,9 +68,6 @@ namespace Empresa.UI.Windows
             alterarButton.Visible = false;
             excluirButton.Visible = false;
             sairButton.Visible = false;
-            confirmarAlterarButton.Visible = false;
-            confirmarExcluirButton.Visible = false;
-            confirmarInclusaoButton.Visible = true;
             voltarButton.Visible = true;
         }
 
@@ -90,15 +91,91 @@ namespace Empresa.UI.Windows
             MessageBox.Show("Cliente inserido com sucesso!");
             ExibirGrid();
             LimparCampos();
-            
+
         }
 
         private void LimparCampos()
         {
-            idTextBox.Text = "";
-            nomeTextBox.Text = "";
-            emailTextBox.Text = "";
-            telefoneTextBox.Text = "";
+            idTextBox.Clear();
+            nomeTextBox.Clear();
+            emailTextBox.Clear();
+            telefoneTextBox.Clear();
+        }
+
+        private void excluirButton_Click(object sender, EventArgs e)
+        {
+
+            Cliente cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem; //fazendo o Cast
+            
+            idTextBox.Text = cliente.Id.ToString();
+            nomeTextBox.Text = cliente.Nome;
+            emailTextBox.Text = cliente.Email;
+            telefoneTextBox.Text = cliente.Telefone;
+
+            confirmarAlterarButton.Visible = false;
+            confirmarExcluirButton.Visible = true;
+            confirmarInclusaoButton.Visible = false;
+
+            ExibirFicha();
+
+
+        }
+
+        private void alterarButton_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)listaDataGridView.CurrentRow.DataBoundItem; //fazendo o Cast
+            //pegando os valores e jogando para os textbox para atualizar
+            idTextBox.Text = cliente.Id.ToString();
+            nomeTextBox.Text = cliente.Nome;
+            emailTextBox.Text = cliente.Email;
+            telefoneTextBox.Text = cliente.Telefone;
+
+            confirmarAlterarButton.Visible = true;
+            confirmarExcluirButton.Visible = false;
+            confirmarInclusaoButton.Visible = false;
+
+            ExibirFicha();
+
+        }
+
+        private void confirmarAlterarButton_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente();
+
+            cliente.Id = Convert.ToInt32(idTextBox.Text);
+            cliente.Nome = nomeTextBox.Text;
+            cliente.Email = emailTextBox.Text;
+            cliente.Telefone = telefoneTextBox.Text;
+
+            ClienteDb clienteDb = new ClienteDb();
+            clienteDb.Alterar(cliente);
+
+            MessageBox.Show("Alteração realizada com sucesso!");
+            ExibirGrid();
+            LimparCampos();
+
+        }
+
+        private void confirmarExcluirButton_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente();
+
+            cliente.Id = Convert.ToInt32(idTextBox.Text);
+            cliente.Nome = nomeTextBox.Text;
+            cliente.Email = emailTextBox.Text;
+            cliente.Telefone = telefoneTextBox.Text;
+
+            ClienteDb clienteDb = new ClienteDb();
+            clienteDb.Excluir(cliente.Id);
+
+            MessageBox.Show("Registro realizado com sucesso!");
+            ExibirGrid();
+            LimparCampos();
+        }
+
+        private void sairButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
