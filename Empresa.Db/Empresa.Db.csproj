@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CC3A97D-D3CE-4895-9389-9A68109F8633}</ProjectGuid>
+    <ProjectGuid>{80A82F10-EF4A-461B-BD5D-A9A033C2F99C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Empresa.Models</RootNamespace>
-    <AssemblyName>Empresa.Models</AssemblyName>
+    <RootNamespace>Empresa.Db</RootNamespace>
+    <AssemblyName>Empresa.Db</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="EntidadeBase.cs" />
+    <Compile Include="ClienteDb.cs" />
+    <Compile Include="Db.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Empresa.Models\Empresa.Models.csproj">
+      <Project>{8cc3a97d-d3ce-4895-9389-9a68109f8633}</Project>
+      <Name>Empresa.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
