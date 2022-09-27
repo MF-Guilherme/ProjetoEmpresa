@@ -77,3 +77,7 @@ C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empr
 C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\obj\Debug\Empresa.UI.Web.csproj.CopyComplete
 C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\obj\Debug\Empresa.UI.Web.dll
 C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\obj\Debug\Empresa.UI.Web.pdb
+C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\bin\Empresa.Db.dll
+C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\bin\Empresa.Models.dll
+C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\bin\Empresa.Db.pdb
+C:\Users\guilherme.ferreira\Desktop\Backup\IMPACTA\Nanodegree 1\POO\Projeto Empresa\Empresa\Empresa.UI.Web\bin\Empresa.Models.pdb
