@@ -22,7 +22,10 @@ namespace Empresa.UI.Web.Controllers
         // GET: Cliente/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var db = new ClienteDb();
+            var cliente = db.ObterPorId(id);
+
+            return View(cliente);
         }
 
         // GET: Cliente/Create

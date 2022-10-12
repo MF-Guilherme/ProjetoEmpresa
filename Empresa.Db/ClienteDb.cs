@@ -62,6 +62,42 @@ namespace Empresa.Db
 
         }
 
+        public Cliente ObterPorId(int id)
+        {
+            string comandoSql = @"SELECT Id, Nome, Email, Telefone 
+                                    FROM Cliente
+                                    WHERE Id=@Id";
+
+            var con = new SqlConnection(Db.Conexao);
+            var cmd = new SqlCommand(comandoSql, con);
+            
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            Cliente cliente = null;
+
+            con.Open();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                //instancio um cliente
+                cliente = new Cliente();
+
+                //pego os dados do cliente
+                cliente.Id = Convert.ToInt32(reader["Id"]);
+                cliente.Nome = reader["Nome"].ToString();
+                cliente.Email = reader["Email"].ToString();
+                cliente.Telefone = reader["Telefone"].ToString();
+
+            }
+
+            reader.Close();
+            con.Close();
+
+            return cliente;
+        }
+
         public List<Cliente> Listar()
         {
             string comandoSql = @"SELECT Id, Nome, Email, Telefone from Cliente";
