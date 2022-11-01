@@ -55,22 +55,28 @@ namespace Empresa.UI.Web.Controllers
         // GET: Cliente/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var db = new ClienteDb();
+            var cliente = db.ObterPorId(id);
+
+            return View(cliente);
         }
 
         // POST: Cliente/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Cliente cliente)
         {
             try
             {
                 // TODO: Add update logic here
 
+                var db = new ClienteDb();
+                db.Alterar(cliente);
+
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(cliente);
             }
         }
 
