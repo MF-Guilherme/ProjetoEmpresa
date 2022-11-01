@@ -83,7 +83,10 @@ namespace Empresa.UI.Web.Controllers
         // GET: Cliente/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var db = new ClienteDb();
+            var cliente = db.ObterPorId(id);
+
+            return View(cliente);
         }
 
         // POST: Cliente/Delete/5
@@ -93,6 +96,8 @@ namespace Empresa.UI.Web.Controllers
             try
             {
                 // TODO: Add delete logic here
+                var db = new ClienteDb();
+                db.Excluir(id);
 
                 return RedirectToAction("Index");
             }
