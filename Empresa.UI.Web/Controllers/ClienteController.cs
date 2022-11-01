@@ -36,17 +36,19 @@ namespace Empresa.UI.Web.Controllers
 
         // POST: Cliente/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Cliente cliente)
         {
             try
             {
                 // TODO: Add insert logic here
+                var db = new ClienteDb();
+                db.Incluir(cliente);
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(cliente);
             }
         }
 
